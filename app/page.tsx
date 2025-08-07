@@ -36,7 +36,7 @@ export default function Home() {
             <Card className="w-full max-w-sm">
               <CardContent>
                 <CardDescription>
-                  Sigin in to search for jobs and save your preferences :D
+                  Sign in in to search for jobs and save your preferences :D
                 </CardDescription>
               </CardContent>
             </Card>
