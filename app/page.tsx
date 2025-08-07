@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button"
+import Link from 'next/link';
 import {
   Card,
   CardContent,
@@ -21,7 +22,9 @@ export default function Home() {
           />
         </div>
         <div className={"login"} >
-          <Button>Login / Sign Up</Button>
+          <Button>
+            <Link href="/auth">Login / Sign Up</Link>
+          </Button>
         </div>
       </header>
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
