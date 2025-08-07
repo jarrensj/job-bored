@@ -161,3 +161,23 @@
   margin: auto 0 auto 3%;
 }
 
+.intro {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+  padding: 2em;
+}
+
+.intro h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.intro-card {
+  align-self: center;
+}
+
