@@ -13,12 +13,14 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import Link from 'next/link';
 import "./page.css"
 
 // TODO: for now we are using default shadcn card template, but we should zoom in more on mobile view
+// TODO: add region, and other filters like experience lv, citizenship status, contract or fte, etc
 export default function Auth() {
     const [issignup, setIssignup] = useState(false)
-
+    const handleSignup = () => {setIssignup(!issignup)}
     return (
         <div className={"bg"}>
             <div className={"container"}>
@@ -26,17 +28,41 @@ export default function Auth() {
                     issignup ? (
                         <Card className="w-full max-w-sm">
                             <CardHeader>
-                                <CardTitle>Login to your account</CardTitle>
+                                <CardTitle>Sign up for an account</CardTitle>
                                 <CardDescription>
-                                    Enter your email below to login to your account
+                                    Enter your email below to sign up
                                 </CardDescription>
                                 <CardAction>
-                                    <Button variant="link">Sign Up</Button>
+                                    <Button variant="link">
+                                        <Link href={""} onClick={handleSignup}>Sign In</Link>
+                                    </Button>
                                 </CardAction>
                             </CardHeader>
                             <CardContent>
                                 <form>
                                     <div className="flex flex-col gap-6">
+                                        <div className="grid gap-2">
+                                            <div className="flex items-center">
+                                                <Label htmlFor="password">Full Name</Label>
+                                            </div>
+                                            <Input
+                                                id="full name"
+                                                type="text"
+                                                placeholder="John Doe"
+                                                required
+                                            />
+                                        </div>
+                                        <div className="grid gap-2">
+                                            <div className="flex items-center">
+                                                <Label htmlFor="password">Job Title</Label>
+                                            </div>
+                                            <Input
+                                                id="job title"
+                                                type="text"
+                                                placeholder="Software Engineer"
+                                                required
+                                            />
+                                        </div>
                                         <div className="grid gap-2">
                                             <Label htmlFor="email">Email</Label>
                                             <Input
@@ -49,12 +75,6 @@ export default function Auth() {
                                         <div className="grid gap-2">
                                             <div className="flex items-center">
                                                 <Label htmlFor="password">Password</Label>
-                                                <a
-                                                    href="#"
-                                                    className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
-                                                >
-                                                    Forgot your password?
-                                                </a>
                                             </div>
                                             <Input id="password" type="password" required />
                                         </div>
@@ -63,7 +83,7 @@ export default function Auth() {
                             </CardContent>
                             <CardFooter className="flex-col gap-2">
                                 <Button type="submit" className="w-full">
-                                    Login
+                                    Sign Up
                                 </Button>
                             </CardFooter>
                         </Card>
@@ -75,7 +95,9 @@ export default function Auth() {
                                     Enter your email below to login to your account
                                 </CardDescription>
                                 <CardAction>
-                                    <Button variant="link">Sign Up</Button>
+                                    <Button variant="link">
+                                        <Link href={""} onClick={handleSignup}>Sign Up</Link>
+                                    </Button>
                                 </CardAction>
                             </CardHeader>
                             <CardContent>
