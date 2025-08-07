@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Button } from "@/components/ui/button"
 
 export default function Home() {
   return (
@@ -13,6 +14,9 @@ export default function Home() {
               height={38}
               priority
           />
+        </div>
+        <div className={"login"} >
+          <Button>Login / Sign Up</Button>
         </div>
       </header>
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
